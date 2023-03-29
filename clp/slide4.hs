@@ -40,9 +40,6 @@ somaLista (a:b) = a + somaLista b
 tamanho [] = 0
 tamanho (_:b) = 1 + tamanho b
 
-inverte [] = []
-inverte (a:b) = inverte b ++ [a]
-
 primeiros 0 _ = []
 primeiros n (a:b) = a : primeiros (n-1) b
 
@@ -60,7 +57,6 @@ sobrenome (_,s) = s
 
 qsort [] = []
 qsort (a:b) = qsort menores ++ [a] ++ qsort maiores
-   where
-       menores = [ e | e <- b, e <= a ]
-       maiores = [ e | e <- b, e > a ]
-
+  where
+    menores = [ e | e <- b, e <= a ]
+    maiores = [ e | e <- b, e > a ]
